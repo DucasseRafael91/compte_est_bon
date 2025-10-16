@@ -33,7 +33,7 @@ def apply_operations(op, a, b):
         return None
 
 
-if __name__ == "__main__":
+def main():
     while True:
         print_numbers()
 
@@ -86,3 +86,7 @@ if __name__ == "__main__":
         if result == number_to_reach:
             print("\nLe compte est bon !")
             break
+
+
+if __name__ == "__main__":
+    main()
