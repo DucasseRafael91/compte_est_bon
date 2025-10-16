@@ -9,7 +9,6 @@ grid_of_values = [1, 1, 2, 2, 3, 3, 4, 4, 5, 5,
 number_to_reach = random.randint(101, 999)
 plates = random.sample(grid_of_values, 6)
 
-# Liste des nombres disponibles : au départ, ce sont les 6 plaques
 available_numbers = plates.copy()
 
 
