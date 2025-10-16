@@ -46,22 +46,18 @@ def main():
             break
 
         try:
-            a = int(input("Premier nombre : "))
-            b = int(input("Deuxième nombre : "))
-
-            if a == b and available_numbers.count(a) < 2:
-                print("Ce nombre n'est disponible qu'une seule fois.")
-                continue
+            firs_number = int(input("Premier nombre : "))
+            second_number = int(input("Deuxième nombre : "))
 
             temporary_list = available_numbers.copy()
-            if a in temporary_list:
-                temporary_list.remove(a)
+            if firs_number in temporary_list:
+                temporary_list.remove(firs_number)
             else:
                 print("Le premier nombre n'est pas disponible.")
                 continue
 
-            if b in temporary_list:
-                temporary_list.remove(b)
+            if second_number in temporary_list:
+                temporary_list.remove(second_number)
             else:
                 print("Le deuxième nombre n'est pas disponible.")
                 continue
@@ -71,16 +67,16 @@ def main():
             continue
 
         operation_choose = input("Opération (+, -, *, /) : ").strip()
-        result = apply_operations(operation_choose, a, b)
+        result = apply_operations(operation_choose, firs_number, second_number)
 
         if result is None:
             print("Opération invalide")
             continue
 
-        print(f" {a} {operation_choose} {b} = {result}")
+        print(f" {firs_number} {operation_choose} {second_number} = {result}")
 
-        available_numbers.remove(a)
-        available_numbers.remove(b)
+        available_numbers.remove(firs_number)
+        available_numbers.remove(second_number)
         available_numbers.append(result)
 
         if result == number_to_reach:
