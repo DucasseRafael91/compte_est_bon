@@ -33,8 +33,16 @@ def apply_operations(op, a, b):
         return None
 
 
-
-
 if __name__ == "__main__":
-    print_numbers()
-    apply_operations(apply_operations, available_numbers, plates)
+    while True:
+        print_numbers()
+
+        if len(available_numbers) == 1:
+            print("Il ne reste qu'un seul nombre.")
+            break
+
+        arret = input("Voulez-vous arrêter ? (o/n) : ").lower()
+        if arret == 'o':
+            break
+
+        
