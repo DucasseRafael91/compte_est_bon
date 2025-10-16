@@ -14,10 +14,10 @@ nombres_disponibles = plaques.copy()
 
 print("Nombre à atteindre :", cible)
 
-def afficher_nombres():
+def print_numbers():
     print("🔢 Nombres disponibles :", nombres_disponibles)
 
-def appliquer_operation(op, a, b):
+def apply_operations(op, a, b):
     if op == '+':
         return a + b
     elif op == '-':
@@ -33,6 +33,8 @@ def appliquer_operation(op, a, b):
         return None
 
 
+
+
 if __name__ == "__main__":
-    afficher_nombres()
-    appliquer_operation(appliquer_operation, cible, plaques)
+    print_numbers()
+    apply_operations(apply_operations, cible, plaques)
