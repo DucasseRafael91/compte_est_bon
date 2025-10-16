@@ -45,4 +45,44 @@ if __name__ == "__main__":
         if arret == 'o':
             break
 
-        
+        try:
+            a = int(input("Premier nombre : "))
+            b = int(input("Deuxième nombre : "))
+
+            if a == b and available_numbers.count(a) < 2:
+                print("Ce nombre n'est disponible qu'une seule fois.")
+                continue
+
+            temporary_list = available_numbers.copy()
+            if a in temporary_list:
+                temporary_list.remove(a)
+            else:
+                print("Le premier nombre n'est pas disponible.")
+                continue
+
+            if b in temporary_list:
+                temporary_list.remove(b)
+            else:
+                print("Le deuxième nombre n'est pas disponible.")
+                continue
+
+        except ValueError:
+            print("Veuillez entrer des nombres valides.")
+            continue
+
+        operation_choose = input("Opération (+, -, *, /) : ").strip()
+        result = apply_operations(operation_choose, a, b)
+
+        if result is None:
+            print("Opération invalide")
+            continue
+
+        print(f" {a} {operation_choose} {b} = {result}")
+
+        available_numbers.remove(a)
+        available_numbers.remove(b)
+        available_numbers.append(result)
+
+        if result == number_to_reach:
+            print("\nLe compte est bon !")
+            break
