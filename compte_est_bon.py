@@ -11,6 +11,8 @@ plates = random.sample(grid_of_values, 6)
 
 available_numbers = plates.copy()
 
+def infinite(i=1):
+    while True:
 
 
 def print_numbers():
@@ -82,7 +84,6 @@ def main():
         if result == number_to_reach:
             print("\nLe compte est bon !")
             break
-
 
 if __name__ == "__main__":
     main()
