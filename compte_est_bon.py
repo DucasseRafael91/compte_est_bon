@@ -17,16 +17,16 @@ print("Nombre à atteindre :", number_to_reach)
 def print_numbers():
     print("🔢 Nombres disponibles :", available_numbers)
 
-def apply_operations(op, a, b):
-    if op == '+':
-        return a + b
-    elif op == '-':
-        return a - b
-    elif op == '*':
-        return a * b
-    elif op == '/':
-        if b != 0 and a % b == 0:
-            return a // b
+def apply_operations(operation, first_number, second_number):
+    if operation == '+':
+        return first_number + second_number
+    elif operation == '-':
+        return first_number - second_number
+    elif operation == '*':
+        return first_number * second_number
+    elif operation == '/':
+        if second_number != 0 and first_number % second_number == 0:
+            return first_number // second_number
         else:
             return None
     else:
