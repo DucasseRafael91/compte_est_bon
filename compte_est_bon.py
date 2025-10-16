@@ -12,7 +12,7 @@ plates = random.sample(grid_of_values, 6)
 # Liste des nombres disponibles : au départ, ce sont les 6 plaques
 available_numbers = plates.copy()
 
-print("Nombre à atteindre :", number_to_reach)
+
 
 def print_numbers():
     print("🔢 Nombres disponibles :", available_numbers)
@@ -35,6 +35,7 @@ def apply_operations(operation, first_number, second_number):
 
 def main():
     while True:
+        print("Nombre à atteindre :", number_to_reach)
         print_numbers()
 
         if len(available_numbers) == 1:
@@ -47,6 +48,7 @@ def main():
 
         try:
             firs_number = int(input("Premier nombre : "))
+            operation_choose = input("Opération (+, -, *, /) : ").strip()
             second_number = int(input("Deuxième nombre : "))
 
             temporary_list = available_numbers.copy()
@@ -66,7 +68,6 @@ def main():
             print("Veuillez entrer des nombres valides.")
             continue
 
-        operation_choose = input("Opération (+, -, *, /) : ").strip()
         result = apply_operations(operation_choose, firs_number, second_number)
 
         if result is None:
