@@ -1,3 +1,6 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
 import random
 
 
@@ -12,9 +15,20 @@ plates = random.sample(grid_of_values, 6)
 available_numbers = plates.copy()
 
 def print_numbers():
+    """
+    Affiche les nombres disponibles pour trouver le nombre exact
+        :return : none
+    """
     print("🔢 Nombres disponibles :", available_numbers)
 
 def apply_operations(operation, first_number, second_number):
+    """
+    Permet d'appliquer les operations en fonction du signe passés en paramétres
+        :param operation : signe décrivant l'opération mathématique à effectuer
+        :param first_number : 1er nombre à gauche du signe d'opération
+        :param second_number : 2er nombre à droite du signe d'opération
+        :return : valeurs resultant de l'opération effectué
+    """
     if operation == '+':
         return first_number + second_number
     elif operation == '-':
@@ -31,6 +45,13 @@ def apply_operations(operation, first_number, second_number):
 
 
 def main():
+    """
+    Fonction Main
+        :param operation : signe décrivant l'opération mathématique à effectuer
+        :param first_number : 1er nombre à gauche du signe d'opération
+        :param second_number : 2er nombre à droite du signe d'opération
+        :return : valeurs resultant de l'opération effectué
+    """
     while True:
         print("Nombre à atteindre :", number_to_reach)
         print_numbers()
